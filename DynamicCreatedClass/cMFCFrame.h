@@ -31,7 +31,7 @@ class LObject;
  *-----------------------------------------*/
 struct CRuntimeClass {
     std::string m_className;                          // 类名
-    int m_objectSize;                                 // 类大小
+    int m_objectSize;                                 // 类大小(字节)
     unsigned int m_schema;                            // 类的唯一识别码
     LObject *(*m_pfnCreateObject)();                  // 创建对象的函数指针
     CRuntimeClass *m_pBaseClass;                      // 基类信息
@@ -40,6 +40,7 @@ struct CRuntimeClass {
 
     /* 根据类名查找 */
     static CRuntimeClass *load(const std::string &className);
+
     /* 创建对象 */
     LObject *createObject() const;
 };

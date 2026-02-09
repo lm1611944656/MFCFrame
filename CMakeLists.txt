@@ -3,17 +3,17 @@ cmake_minimum_required(VERSION 3.20)
 
 # 指定项目名称
 project(application)
-message(STATUS "项目目录：${PROJECT_SOURCE_DIR}")
+message(STATUS "???????${PROJECT_SOURCE_DIR}")
 
 # ******************************************************************
 # 启用 C++14 标准
-set(CMAKE_CXX_STANDARD 14) # 设置 C++14 标准
+set(CMAKE_CXX_STANDARD 14)  # 设置 C++14 标准
 set(CMAKE_CXX_STANDARD_REQUIRED ON) # 确保必须使用指定的标准
 set(CMAKE_CXX_EXTENSIONS OFF) # 禁用编译器特定扩展
 
 # 指定可执行文件最后运行在哪个操作系统上
 # set(CMAKE_SYSTEM_NAME Linux)
-set(CMAKE_SYSTEM_PROCESSOR x86)     # (arm还是x86)
+set(CMAKE_SYSTEM_PROCESSOR x86)      # (arm还是x86)
 
 # 指定编译工具的绝对位置
 # set(CMAKE_C_COMPILER /usr/bin/gcc)
@@ -60,15 +60,15 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/example/timer)
 #        ${NEW_example_DCC_LIST}
 #        ${NEW_MFC_DCC_LIST})
 
-#add_executable(application
-#        ${PROJECT_SOURCE_DIR}/example/MsgMapAndCmdPass/main.cpp
-#        ${NEW_MFC_MMACP_LIST})
-
 add_executable(application
-        ${PROJECT_SOURCE_DIR}/example/timer/main.cpp
-        ${NEW_utils_LIST})
+        ${PROJECT_SOURCE_DIR}/example/MsgMapAndCmdPass/main.cpp
+        ${NEW_MFC_MMACP_LIST})
 
-# message(STATUS "OpenCV 库：${OpenCV_LIBS}")
+#add_executable(application
+#        ${PROJECT_SOURCE_DIR}/example/timer/main.cpp
+#        ${NEW_utils_LIST})
+
+# message(STATUS "OpenCV ??${OpenCV_LIBS}")
 
 # 为目标添加头文件
 target_include_directories(application PRIVATE
@@ -76,11 +76,11 @@ target_include_directories(application PRIVATE
         ${PROJECT_SOURCE_DIR}/MsgMapAndCmdPass
         ${PROJECT_SOURCE_DIR}/utils
         ${PROJECT_SOURCE_DIR}/example/DynamicCreatedClass
-)
+        )
 
 # 可执行文件链接动态库
 target_link_libraries(application
         # ${OpenCV_LIBS}
-        # pthread                 # 使用多线程需要包含这个库
-        # SRC_LIB                 # 要链接的动态库名字
+        # pthread                  # 使用多线程需要包含这个库
+        # SRC_LIB                  # 要链接的动态库名字
 )

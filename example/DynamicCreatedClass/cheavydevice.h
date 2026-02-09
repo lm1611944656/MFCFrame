@@ -32,7 +32,7 @@ private:
     double m_power;
     std::string m_name;
     std::vector<int> m_data;
-    unsigned int m_buffer[128];
+    unsigned int m_buffer[256];
 };
 
 #endif // CHEAVYDEVICE_H
