@@ -8,7 +8,7 @@
 
 #include "timer.h"
 #include <iostream>
-
+#include "version.h"
 
 // 定义三个定时器句柄
 timer_t timer1;  // 每1s执行（周期）
@@ -40,6 +40,13 @@ void task3_callback(timer_t* handle) {
 }
 
 int main() {
+    /*获取软件的版本号*/
+    const char *str_ver = version_string();
+    unsigned int hex_ver = version();
+    printf("=== Version Module Test ===\n");
+    printf("String Version: %s\n", str_ver);
+    printf("Hex Version   : 0x%06X\n", hex_ver);
+
     timer_loop_t loop;
 
     // 初始化定时器循环

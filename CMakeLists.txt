@@ -60,13 +60,14 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/example/timer)
 #        ${NEW_example_DCC_LIST}
 #        ${NEW_MFC_DCC_LIST})
 
-add_executable(application
-        ${PROJECT_SOURCE_DIR}/example/MsgMapAndCmdPass/main.cpp
-        ${NEW_MFC_MMACP_LIST})
-
 #add_executable(application
-#        ${PROJECT_SOURCE_DIR}/example/timer/main.cpp
-#        ${NEW_utils_LIST})
+#        ${PROJECT_SOURCE_DIR}/example/MsgMapAndCmdPass/main.cpp
+#        ${NEW_MFC_MMACP_LIST})
+
+message(STATUS ">>> 调试信息: NEW_utils_LIST 的内容是: [${NEW_utils_LIST}]")
+add_executable(application
+        ${PROJECT_SOURCE_DIR}/example/timer/main.cpp
+        ${NEW_utils_LIST})
 
 # message(STATUS "OpenCV ??${OpenCV_LIBS}")
 
